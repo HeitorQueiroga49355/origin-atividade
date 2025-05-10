@@ -1,0 +1,35 @@
+Nome: Heitor Queiroga Duarte
+
+git clone https://gitlab.com/mizael.cortez/curso-branchs-ifrn-ead.git
+cd curso-branchs-ifrn-ead/
+touch texto.txt
+nano texto.txt
+git config --global --add safe.directory '/mnt/140DF90E4E980D43/Documents/if lessons/Embarcatech/residencia/tarefa2-git/curso-branchs-ifrn-ead'
+git add .
+git commit -m "first Heitor commit"
+git checkout -b feature-1
+nano texto.txt
+git add .
+git commit -m "modifying texto.txt content"
+git checkout main
+nano texto.txt
+git add .
+git commit -m "modifying texto.txt to force conflict"
+git merge feature-1
+nano texto.txt 
+git add .
+git merge --continue
+git checkout -b add-comandos
+git touch comandos.txt
+git add .
+git commit -m "adding commandos.txt"
+git checkout main
+git remote remove origin
+git remote add origin git@github.com:HeitorQueiroga49355/origin-atividade.git
+git branch -M main
+git push -u origin main
+git checkout add-comandos
+nano comandos.txt
+git add .
+git commit -m "updating commandos.txt after upload to remote repository"
+git push --set-upstream origin add-comandos
